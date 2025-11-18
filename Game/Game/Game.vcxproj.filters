@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source files\button.cpp" />
+    <ClCompile Include="source files\Game.cpp" />
+    <ClCompile Include="source files\gui.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="source files\maze.cpp" />
+    <ClCompile Include="source files\minimap.cpp" />
+    <ClCompile Include="source files\npc.cpp" />
+    <ClCompile Include="source files\npcHealthBar.cpp" />
+    <ClCompile Include="source files\player.cpp" />
+    <ClCompile Include="source files\scene.cpp" />
+    <ClCompile Include="source files\window.cpp" />
+    <ClCompile Include="source files\item.cpp" />
+    <ClCompile Include="source files\inventory.cpp" />
+    <ClCompile Include="source files\resourceManager.cpp" />
+    <ClCompile Include="source files\items.cpp" />
+    <ClCompile Include="utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="headers\button.h" />
+    <ClInclude Include="headers\Game.h" />
+    <ClInclude Include="headers\gui.h" />
+    <ClInclude Include="headers\maze.h" />
+    <ClInclude Include="headers\minimap.h" />
+    <ClInclude Include="headers\npc.h" />
+    <ClInclude Include="headers\npcHealthBar.h" />
+    <ClInclude Include="headers\player.h" />
+    <ClInclude Include="headers\scene.h" />
+    <ClInclude Include="headers\window.h" />
+    <ClInclude Include="headers\item.h" />
+    <ClInclude Include="headers\inventory.h" />
+    <ClInclude Include="headers\resourceManager.h" />
+    <ClInclude Include="headers\items.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
