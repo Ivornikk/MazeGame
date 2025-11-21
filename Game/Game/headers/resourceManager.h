@@ -9,6 +9,7 @@ class ResourceManager {
 
 	std::vector<std::pair<int, Model>> npcsModels;
 	std::vector <std::pair<int, Model>> itemsModels;
+	std::vector<std::pair<int, Texture2D>> itemsHotBarIcons;
 
 	std::vector<std::pair<std::pair<int, ModelAnimation*>, int*>> npcsAnimations;
 	std::vector<std::pair<std::pair<int, ModelAnimation*>, int*>> itemsAnimations;
@@ -20,6 +21,8 @@ public:
 
 	void setNpcsCount(int count);
 
+	Texture2D getItemIcon(int id);
+
 	Model getNpcModel(int id);
 	Model getItemModel(int id);
 	ModelAnimation* getNpcAnimations(int id);
@@ -27,6 +30,7 @@ public:
 	int getNpcAnimationsCount(int id);
 	int getItemAnimationsCount(int id);
 
+	void loadItemIcon(int id, std::string filepath);
 	void loadNpcModel(int id, std::string filePath);
 	void loadItemModel(int id, std::string filePath);
 	void loadNpcAnimations(int id, std::string filePath, int* animCount);

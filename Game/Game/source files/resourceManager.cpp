@@ -14,6 +14,13 @@ void ResourceManager::setNpcsCount(int count) {
 	this->npcsCount = count;
 }
 
+Texture2D ResourceManager::getItemIcon(int id) {
+	for (auto icon : itemsHotBarIcons)
+		if (icon.first == id)
+			return icon.second;
+	return {};
+}
+
 Model ResourceManager::getNpcModel(int id) {
 	for (std::pair<int, Model> model : npcsModels) {
 		if (model.first == id)
@@ -58,6 +65,14 @@ int ResourceManager::getItemAnimationsCount(int id) {
 		if (itemsAnimations[i].first.first == id)
 			return *itemsAnimations[i].second;
 	}
+}
+
+void ResourceManager::loadItemIcon(int id, std::string filepath) {
+	Image img = LoadImage(filepath.c_str());
+	ImageResize(&img, 100, 100);
+	Texture2D tex = LoadTextureFromImage(img);
+	UnloadImage(img);
+	itemsHotBarIcons.push_back({ id, tex });
 }
 
 void ResourceManager::loadNpcModel(int id, std::string filePath) {
@@ -122,6 +137,10 @@ void ResourceManager::unloadNpc(int id) {
 }
 
 void ResourceManager::unloadItem(int id) {
+	for (auto icon: itemsHotBarIcons)
+		if (icon.first == id) {
+			UnloadTexture(icon.second);
+		}
 	for (std::pair<int, Model> model : itemsModels) {
 		if (model.first == id) {
 			UnloadModel(model.second);

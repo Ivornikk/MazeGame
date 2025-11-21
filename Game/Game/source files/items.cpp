@@ -11,10 +11,8 @@ Key::Key(ResourceManager* resourceManager, Vector3 defPos) : Item(resourceManage
 	animations = rm->getItemAnimations(id);
 	model.transform = MatrixMultiply(model.transform, MatrixRotateY(90.f * DEG2RAD));
 	model.transform = MatrixMultiply(model.transform, MatrixTranslate(-0.2f, -1.f, 0.8f));
-	Image hotBarImage = LoadImage("images/key.png");
-	ImageResize(&hotBarImage, 100, 100);
-	hotBarIcon = LoadTextureFromImage(hotBarImage);
-	UnloadImage(hotBarImage);
+	rm->loadItemIcon(id, "images/key.png");
+	hotBarIcon = rm->getItemIcon(id);
 }
 
 Sword::Sword(ResourceManager* resourceManager, Vector3 defPos) : Item(resourceManager, defPos, 30, 2) {
@@ -28,10 +26,8 @@ Sword::Sword(ResourceManager* resourceManager, Vector3 defPos) : Item(resourceMa
 	animations = rm->getItemAnimations(id);
 	model.transform = MatrixMultiply(model.transform, MatrixRotateY(-90.f * DEG2RAD));
 	model.transform = MatrixMultiply(model.transform, MatrixTranslate(-0.4f, -0.5f, -0.6f));
-	Image hotBarImage = LoadImage("images/sword.png");
-	ImageResize(&hotBarImage, 100, 100);
-	hotBarIcon = LoadTextureFromImage(hotBarImage);
-	UnloadImage(hotBarImage);
+	rm->loadItemIcon(id, "images/sword.png");
+	hotBarIcon = rm->getItemIcon(id);
 }
 
 Mace::Mace(ResourceManager* resourceManager, Vector3 defPos) : Item(resourceManager, defPos, 50, 3) {
@@ -46,10 +42,8 @@ Mace::Mace(ResourceManager* resourceManager, Vector3 defPos) : Item(resourceMana
 	model.transform = MatrixMultiply(model.transform, MatrixScale(0.8, 0.8, 0.8));
 	model.transform = MatrixMultiply(model.transform, MatrixRotateY(90.f * DEG2RAD));
 	model.transform = MatrixMultiply(model.transform, MatrixTranslate(0, -1, -0.5f));
-	Image hotBarImage = LoadImage("images/mace.png");
-	ImageResize(&hotBarImage, 100, 100);
-	hotBarIcon = LoadTextureFromImage(hotBarImage);
-	UnloadImage(hotBarImage);
+	rm->loadItemIcon(id, "images/mace.png");
+	hotBarIcon = rm->getItemIcon(id);
 }
 
 CrystalSword::CrystalSword(ResourceManager* resourceManager, Vector3 defPos) : Item(resourceManager, defPos, 75, 4) {
@@ -64,8 +58,6 @@ CrystalSword::CrystalSword(ResourceManager* resourceManager, Vector3 defPos) : I
 	model.transform = MatrixMultiply(model.transform, MatrixScale(0.3, 0.3, 0.3));
 	model.transform = MatrixMultiply(model.transform, MatrixRotateY(-90.f * DEG2RAD));
 	model.transform = MatrixMultiply(model.transform, MatrixTranslate(0, -1, -0.5f));
-	Image hotBarImage = LoadImage("images/crystalSword.png");
-	ImageResize(&hotBarImage, 100, 100);
-	hotBarIcon = LoadTextureFromImage(hotBarImage);
-	UnloadImage(hotBarImage);
+	rm->loadItemIcon(id, "images/crystalSword.png");
+	hotBarIcon = rm->getItemIcon(id);
 }
